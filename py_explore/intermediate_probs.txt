@@ -1,0 +1,32 @@
+Intermediate Programs
+1. Create a simple calculator which can perform basic arithmetic operations like addition, subtraction, multiplication or division depending upon the user input.
+		Please select operation -
+		1. Add
+		2. Subtract
+		3. Multiply
+		4. Divide
+		Select operations form 1, 2, 3, 4 : 1
+		Enter first number : 20
+		Enter second number : 13
+		20 + 13 = 33
+ 2. Program for LOAN EMI Calculator
+		Formula:
+		E = (P.r.(1+r)n) / ((1+r)n – 1)
+		Here,
+	P = loan amount i.e principal amount
+	R = Interest rate per month
+	T = Loan time period in year
+3. Implement python program for small arithmetic quiz.
+	Welcome. This is a 3 question math quiz
+	 Your answer should be correct to three decimal places.
+	What is 1 + 2? 3
+	Correct!
+	What is 2 * 3? 6
+	Correct!
+	What is 3 - 4? -1
+	Correct!
+	Your score was 3/3
+4. Implement stack operations in python
+5. Implement queue in python a) Normal b) Circular queue
+6. Write a python program to solve towers of hanoi
+

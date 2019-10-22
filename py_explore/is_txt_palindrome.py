@@ -1,7 +1,7 @@
 #
 #===================================================================================
 #
-# NAME        : any_text_palindrome.py
+# NAME        : is_txt_palindrome.py
 # DATE        : 15th Oct, 2019
 # DESCRIPTION : A Python program to find, if a given text is a Palindrome or not.
 # AUTHOR      : V Bhaskar
@@ -41,7 +41,7 @@ LOG_FILENAME = '/tmp/' + str((sys.argv[0]).rsplit('.',1)[0]) + '.log'
 def my_print(msg):
     now = datetime.now()
     dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
-    print(str(sys.argv[0]) + ': '+ dt_string + ': ' + str(inspect.currentframe().f_back.f_lineno)  + ': INFO: ' + msg)
+    print(str(sys.argv[0]) + ': '+ dt_string + ':%4s' % str(inspect.currentframe().f_back.f_lineno)  + ': INFO: ' + msg)
 
 # This is a method to find if a given string is palindrome or not.
 # Arguments:
