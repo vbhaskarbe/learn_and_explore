@@ -73,7 +73,6 @@ def readline_from_file(inputfile):
 #   - None -
 def readline_from_console():
     # Prompt user and read text from console
-    # Ternary operator => text_data = input('Please enter a text: ') if sys.stdin.isatty() else input()
     if sys.stdin.isatty():
         try:
             text_input = input("Please enter a word of text: \n")
@@ -93,7 +92,7 @@ if os.environ['USER'] != 'bhasvara':
 
 # Check if the text is given from Command line interface
 if len(sys.argv) >= 2:
-    my_print('Word of text was given via CLI arguments')
+    my_print('Word of text was given via command line arguments')
     text_data = str(sys.argv[1])
 else:
     # Check if the text is given from environment variable
