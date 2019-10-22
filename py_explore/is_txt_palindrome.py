@@ -33,8 +33,8 @@ from datetime import datetime
 
 ## User defined variables
 INPUT_FILENAME = 'palindrome_input.txt'
+LOG_FILENAME   = '/tmp/' + str((sys.argv[0]).rsplit('.',1)[0]) + '.log'
 
-LOG_FILENAME = '/tmp/' + str((sys.argv[0]).rsplit('.',1)[0]) + '.log'
 # This is a method to print given message with details for debugging.
 # Arguments: 
 #       msg - The message to be printed
@@ -50,7 +50,7 @@ def is_palindrome(string_word):
     ret_msg = "{} is NOT a Palindrome".format(string_word)
     # Reverse the given text using slicing and compare with original text
     if string_word[::-1] == string_word:
-        ret_msg.replace('NOT', '')
+        ret_msg = ret_msg.replace(' NOT ', ' ')
     return ret_msg
 
 # This is a method to readline from given file
@@ -68,6 +68,24 @@ def readline_from_file(inputfile):
         text_data = 'default'
     return text_data
 
+# This is a method to read line from console
+# Arguments:
+#   - None -
+def readline_from_console():
+    # Prompt user and read text from console
+    # Ternary operator => text_data = input('Please enter a text: ') if sys.stdin.isatty() else input()
+    if sys.stdin.isatty():
+        try:
+            text_input = input("Please enter a word of text: \n")
+        except KeyboardInterrupt:
+            my_print("You have pressed CTRL-C. So, using \'default\' as text.")
+            text_input = 'default'
+    else:
+        # If we are not having a stdin() attached then read directly without prompy. 
+        #   Ex: PIPE (|) input from echo
+        text_input = input()
+    return text_input
+
 ## Ensure that only 'bhasvara' user can run this program.
 if os.environ['USER'] != 'bhasvara':
     my_print("ERROR: This program must be run by 'bhasvara' user only.")
@@ -75,7 +93,6 @@ if os.environ['USER'] != 'bhasvara':
 
 # Check if the text is given from Command line interface
 if len(sys.argv) >= 2:
-    my_print('The last argument from CLI was: ' + str(sys.argv[-1]))
     my_print('Word of text was given via CLI arguments')
     text_data = str(sys.argv[1])
 else:
@@ -89,18 +106,7 @@ else:
             my_print("{} file exists. Reading from it.".format(INPUT_FILENAME))
             text_data = readline_from_file(INPUT_FILENAME)
         else:
-            # Prompt user and read text from console
-            # Ternary operator => text_data = input('Please enter a text: ') if sys.stdin.isatty() else input()
-            if sys.stdin.isatty():
-                try:
-                    text_data = input("Please enter a word of text: \n")
-                except KeyboardInterrupt:
-                    my_print("You have pressed CTRL-C. So, using \'default\' as text.")
-                    text_data = 'default'
-            else:
-                # If we are not having a stdin() attached then read directly without prompy. 
-                #   Ex: PIPE (|) input from echo
-                text_data = input()
+            text_data = readline_from_console()
     finally:
         # we have the final text_data to validate
         my_print('\"' + text_data + '" is the given word of text.')
