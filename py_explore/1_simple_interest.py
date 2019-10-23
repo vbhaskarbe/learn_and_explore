@@ -10,14 +10,18 @@ R is the rate of interest
 """
 
 import sys
-if len(sys.argv) < 3:
-    print('3 Arguments are required for this program.')
+
+PROGRAM_NAME = sys.argv[0]
+## TIP - Checking for required program arguments
+if len(sys.argv) < 4:
+    print('ERROR: 3 Arguments are required for this program.')
     ## TIP - Formatted output using 'format'
-    print("USAGE: {} <P> <T> <R>".format(sys.argv[0]))
-    print('      where,')
+    print("USAGE: python {} <P> <T> <R>".format(PROGRAM_NAME))
+    print('       where,')
     print('         P is the principle amount in rupees')
-    print('         T is the time of loan in years')
+    print('         T is the time duration of loan in years')
     print('         R is the rate of interest per year')
+    print("EXAMPLE: python {} 100000 3.0 24".format(PROGRAM_NAME))
     exit(1)
 
 principle_amount = float(sys.argv[1])
