@@ -2,7 +2,7 @@
 """
 2. Write a Python program to calculate compound interest?
 Formula to calculate compound interest annually is given by:
-Compound Interest = P(1 + R/100)r
+Compound Interest = P * ( (1 + R/100) power t)
     Where,
         P is principle amount
         R is the rate and
@@ -18,6 +18,7 @@ principal_amount  = float(sys.argv[1])
 rate_of_interest  = float(sys.argv[2])
 time_span_of_loan = float(sys.argv[3])
 
+## TIP: pow() buildin method can be used for m power n.
 compound_amount = principal_amount * ( pow( (1 + (rate_of_interest / 100)), time_span_of_loan))
 print("The principal amount is  : %10.2f" % round(principal_amount))
 print("The rate of interest is  : %10.2f" % rate_of_interest)
