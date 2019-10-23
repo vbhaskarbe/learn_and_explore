@@ -1,7 +1,7 @@
 #
 #===================================================================================
 #
-# NAME        : is_txt_palindrome.py
+# NAME        : 0AA_is_txt_palindrome.py
 # DATE        : 15th Oct, 2019
 # DESCRIPTION : A Python program to find, if a given text is a Palindrome or not.
 # AUTHOR      : V Bhaskar
@@ -32,7 +32,7 @@ import inspect
 from datetime import datetime
 
 ## User defined variables
-INPUT_FILENAME = 'palindrome_input.txt'
+INPUT_FILENAME = '0AA_palindrome_input.txt'
 LOG_FILENAME   = '/tmp/' + str((sys.argv[0]).rsplit('.',1)[0]) + '.log'
 
 # This is a method to print given message with details for debugging.
@@ -100,7 +100,7 @@ else:
         text_data = os.environ['TEXT_DATA']
         my_print('Word of text was given via TEXT_DATA variable in the environment.')
     except KeyError:
-        # Check if a file palindrome_input.txt exists in current directory and use it.
+        # Check if a file 0AA_palindrome_input.txt exists in current directory and use it.
         if os.path.isfile(INPUT_FILENAME):
             my_print("{} file exists. Reading from it.".format(INPUT_FILENAME))
             text_data = readline_from_file(INPUT_FILENAME)
