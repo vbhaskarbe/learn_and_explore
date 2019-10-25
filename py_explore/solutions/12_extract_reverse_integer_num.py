@@ -12,5 +12,6 @@ for count in range(0, len_number):
     rev_number = (rev_number * 10) + (number % 10)
     number     = number // 10
 
+## TIP: PADding during formattting. This helps in, 10000 -> 00001 cases
 print(f"The number reversed is  : %0*d" % (len_number, rev_number))
 
