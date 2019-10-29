@@ -22,4 +22,12 @@ print( "new Set with elements in either set1 or set2, but not in both:", set1.sy
 print( "Is every element in set1 is in set3?         :", set1.issubset( set3))
 print( "Is every element in set3 is in set1?         :", set1.issuperset( set3))
 
+set4 = ( 'A', 'B', 'C' )
+set4 = frozenset ( set4)
+print( "Frozen set4 is:", set4)
+print( set(dir(set3)).difference( set(dir(set4))))
+print( set(dir(set3)).intersection( set(dir(set4))))
+print( dir( set4))
+
+
 
