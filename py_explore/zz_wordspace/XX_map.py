@@ -27,12 +27,16 @@ def multiply(x):
     return (x*x)
 def add(x):
     return (x+x)
+def squared(x):
+    return (x**x)
 
-funcs = [multiply, add]
-for i in range(5):
+
+print("*" * 60)
+funcs = [multiply, add, squared]
+for i in range(8):
     value = list(map(lambda x: x(i), funcs))
     print(value)
-
+print("*" * 60)
 
 def square(x):
         return (x**2)
