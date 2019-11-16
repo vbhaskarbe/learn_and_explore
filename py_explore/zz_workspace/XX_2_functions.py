@@ -32,3 +32,7 @@ def sum_of_numbers(n):
         total = total + num
     return total
 
+if __name__ == '__main__':
+    print("This module has predefined methods that can be used after import")
+else:
+    print("Congratulations! You have imported this module: ", __file__)

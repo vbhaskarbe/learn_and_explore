@@ -14,7 +14,6 @@ class Fibonacci( object):
             self.values.append(1)
         return self.values[-1]
 
-
 if __name__ == '__main__':
     fib_div = 16
     for fib in Fibonacci():
@@ -24,4 +23,4 @@ if __name__ == '__main__':
         if fib > 10000:
             break
 
-
+    print( Fibonacci())

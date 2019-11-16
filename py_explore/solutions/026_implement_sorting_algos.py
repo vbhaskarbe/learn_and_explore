@@ -2,6 +2,7 @@
 ## 26. Implement few sorting algorithms : Bubble, Quick, Insertion, Merge 
 #
 
+## Bubble sort
 def bubble_sort( ulist):
     length = len( ulist)
     for flx in range(length):
@@ -10,7 +11,7 @@ def bubble_sort( ulist):
                 ulist[fly], ulist[fly + 1] = ulist[fly + 1], ulist[fly]
     print("The Bubble sorted list in ASCending order is    : ", ulist)
 
-## Also known as Partition Exchange sort
+## Quick sort is also known as Partition Exchange sort
 def partition(array, low, high):
     i = low - 1
     pivot = array[high]
@@ -21,12 +22,14 @@ def partition(array, low, high):
     array[i + 1], array[high] = array[high], array[i +1]
     return (i + 1)
 
+## Quick sort algorithm
 def quick_sort( unsorted_list, low, high):
     if low < high:
         pi = partition( unsorted_list, low, high)
         quick_sort( unsorted_list, low, pi - 1)
         quick_sort( unsorted_list, pi + 1, high)
 
+## Insertion sort
 def insertion_sort( unsorted_list):
     for index in range( 1, len(unsorted_list)):
         key = unsorted_list[index]
@@ -37,7 +40,7 @@ def insertion_sort( unsorted_list):
         unsorted_list[jindex + 1] = key
     print("The Insertion sorted list in ASCending order is :", unsorted_list)
 
-#Merge sorting
+# Merge sort
 def merge_list(alist, start, mid, end):
     left  = alist[start:mid]
     right = alist[mid:end]
