@@ -10,6 +10,9 @@ cipher_text = str()
 cipher_key  = 5
 print("Plain text is :", plain_text)
 
+## ASCII value of 'A' is 65
+## ASCII value of 'a' is 97
+## Number of alphabets in english - 26
 for char in plain_text:
     if char.islower():
         cipher_text += chr( (ord(char) + cipher_key - 97) % 26 + 97)
