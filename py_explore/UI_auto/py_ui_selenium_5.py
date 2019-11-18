@@ -26,6 +26,7 @@ class SelUI_Practice():
         print("start_browser: start the browser:", self.browser)
         if self.browser == 'Firefox':
             self.b_driver = webdriver.Firefox()
+            self.b_driver.maximize_window()
         else:
             print("start_browser: browser {} is not yet supported".format(self.browser))
             exit(1)
@@ -39,13 +40,22 @@ class SelUI_Practice():
 
     def single_input_field_test( self):
         print( 'single_input_field_test: Find single entry field and type a value')
-        ## Find the entry field and type - 'Hello, UI-AUTOMATOR' text
-        self.find_element( 'id', 'user-message').send_keys('Hello, UI-AUTOMATOR')
+        ## Find the entry field
+        element = self.find_element( 'id', 'user-message')
+        ## Type a message - Hello, UI-AUTOMATOR
+        element.send_keys('Hello, UI-AUTOMATOR')
         ## Find and click on 'Show Message' button
         self.find_element_and_click( 'xpath', "//button[text()='Show Message']")
         ## Find element and extract 'text' shown by it
         element = self.find_element( 'xpath', "//span[@id='display']")
         print( "Text entered is :", element.text)
+
+    def two_input_fields_test(self):
+        self.find_element( 'id', 'sum1').send_keys('10')
+        self.find_element( 'id', 'sum2').send_keys('20')
+        self.find_element_and_click( 'xpath', "//button[text()='Get Total']")
+        time.sleep(2)
+        print("Sum of 10 + 20 is:", self.find_element( 'xpath', "//span[@id='displayvalue']").text)
 
     def close_browser( self):
         print("close_browser: *** All done! Time to close the browser ***")
@@ -56,5 +66,6 @@ if __name__ == '__main__':
     selui_object.start_browser()
     selui_object.go_to_simple_form_demo()
     selui_object.single_input_field_test()
+    selui_object.two_input_fields_test()
     selui_object.close_browser()
 
