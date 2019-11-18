@@ -2,11 +2,12 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 import time
 
-class PySelenium_UI_Practice():
-    def __init__( self, browser = 'Firefox'):
+class PySelenium_UI():
+    test_site = 'https://www.seleniumeasy.com/test/'
+    def __init__( self, browser = 'Firefox', demo_site = test_site):
         self.browser   = browser
         self.b_driver  = None
-        self.demo_site = 'https://www.seleniumeasy.com/test/'
+        self.demo_site = demo_site
 
     def find_element( self, attr_type, attr_value):
         self.element = None
@@ -51,7 +52,7 @@ class PySelenium_UI_Practice():
         self.b_driver.close()
 
 if __name__ == '__main__':
-    selui_object = PySelenium_UI_Practice()
+    selui_object = PySelenium_UI()
     selui_object.start_browser()
     selui_object.go_to_simple_form_demo()
     selui_object.single_input_field_test()

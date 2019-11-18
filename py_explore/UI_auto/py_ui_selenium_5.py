@@ -3,10 +3,11 @@ from selenium.webdriver.common.keys import Keys
 import time
 
 class PySelenium_UI_Practice():
-    def __init__( self, browser = 'Firefox'):
+    test_site = 'https://www.seleniumeasy.com/test/'
+    def __init__( self, browser = 'Firefox', demo_site = test_site):
         self.browser   = browser
         self.b_driver  = None
-        self.demo_site = 'https://www.seleniumeasy.com/test/'
+        self.demo_site = demo_site
 
     def find_element( self, attr_type, attr_value):
         self.element = None
