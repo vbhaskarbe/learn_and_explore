@@ -10,21 +10,19 @@ class SelUI_Practice():
 
     def find_element( self, attr_type, attr_value):
         self.element = None
-        if attr_type == 'id':
-            self.element = self.b_driver.find_element_by_id(attr_value)
-        elif attr_type == 'link_text':
-            self.element = self.b_driver.find_element_by_link_text(attr_value)
-        elif attr_type == 'xpath':
-            self.element = self.b_driver.find_element_by_xpath(attr_value)
-        else:
-            print("find_element: UnHandled element type")
+        try:
+            find_function = getattr( self.b_driver, 'find_element_by_' + attr_type)
+            self.element = find_function(attr_value)
+        except Exception as e:
+            print("Error: ", e)
             exit(1)
         return self.element
 
     def find_element_and_click( self, attr_type, attr_value):
         self.element = self.find_element( attr_type, attr_value)
         self.element.click()
-        
+        time.sleep(1)
+
     def start_browser( self):
         if self.browser == 'Firefox':
             self.b_driver = webdriver.Firefox()
