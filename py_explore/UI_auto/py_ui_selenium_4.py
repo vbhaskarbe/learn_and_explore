@@ -24,13 +24,14 @@ class SelUI_Practice():
         time.sleep(1)
 
     def start_browser( self):
+        print("start_browser: start the browser:", self.browser)
         if self.browser == 'Firefox':
             self.b_driver = webdriver.Firefox()
         else:
             print("start_browser: browser {} is not yet supported".format(self.browser))
             exit(1)
+        print("start_browser: Go to the demo site:", self.demo_site)
         self.b_driver.get(self.demo_site)
-        print( self.b_driver.title)
 
     def go_to_simple_form_demo( self):
         print( "go_to_simple_form_demo:", self.b_driver.title)
@@ -38,7 +39,7 @@ class SelUI_Practice():
         self.find_element_and_click( 'link_text', 'Simple Form Demo')
 
     def single_input_field_test( self):
-        print( 'single_input_field_test:', self.b_driver.title)
+        print( 'single_input_field_test: Find single entry field and type a value')
         ## Find the entry field
         element = self.find_element( 'id', 'user-message')
         ## Type a message - Hello, UI-AUTOMATOR
@@ -50,7 +51,7 @@ class SelUI_Practice():
         print( "Text entered is :", element.text)
 
     def close_browser( self):
-        print("close_browser: All done! Time to close the browser")
+        print("close_browser: *** All done! Time to close the browser ***")
         self.b_driver.close()
 
 if __name__ == '__main__':
