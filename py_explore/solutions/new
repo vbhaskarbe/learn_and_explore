@@ -1,0 +1,12 @@
+What is nohup in UNIX?
+
+Nohup is a special command which is used to run process in background, but it is slightly different than & which is normally used for putting a process in background. An UNIX process started with nohup will not stop even if the user who has stared log off from system. While background process started with & will stop as soon as user logoff.
+
+What are the various stages of a Linux process it passes through?
+
+A Linux process generally passes through four stages:
+
+    Waiting: The Linux process waits for the resource.
+    Running: The Linux process is currently being executed.
+    Stopped: The Linux process is stopped after successful execution.
+    Zombie: The process has stopped but is still active in the process table.
