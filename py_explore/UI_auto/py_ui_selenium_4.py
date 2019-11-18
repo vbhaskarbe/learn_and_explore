@@ -20,7 +20,6 @@ class PySelenium_UI_Practice():
 
     def find_element_and_click( self, attr_type, attr_value):
         self.find_element( attr_type, attr_value).click()
-        time.sleep(1)
 
     def start_browser( self):
         print("start_browser: start the browser:", self.browser)
