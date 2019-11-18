@@ -2,7 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 import time
 
-class SelUI_Practice():
+class PySelenium_UI_Practice():
     def __init__( self, browser = 'Firefox'):
         self.browser   = browser
         self.b_driver  = None
@@ -62,7 +62,7 @@ class SelUI_Practice():
         self.b_driver.close()
 
 if __name__ == '__main__':
-    selui_object = SelUI_Practice()
+    selui_object = PySelenium_UI_Practice()
     selui_object.start_browser()
     selui_object.go_to_simple_form_demo()
     selui_object.single_input_field_test()
