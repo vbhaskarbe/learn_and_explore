@@ -1,0 +1,11 @@
+read ncount
+sum=0.0
+while [ $ncount -gt 0 ]
+do
+  read num
+  sum=`echo "scale=4; $sum + $num" | bc -l`
+  printf '%.3f\n' $sum
+  ncount=$(($ncount - 1))
+done
+echo "-=====-"
+printf '%.3f\n' $sum
