@@ -1,4 +1,6 @@
-
+#
+## Implement Fibinacci() class
+#
 
 class Fibonacci( object):
     def __init__(self):
