@@ -81,6 +81,8 @@ t 2
     * ds
 59. Write a python program to find LCM and GCD of two numbers?
 60. Generate a random number using NumPy Library?
-
-
+61. Python code to Swap keys with values in a dictionary? DICT comprehension
+62. Using pythons filter() find common elements between 2 lists
+63. Read a date/time in IST and convert to GMT/UTC?
+64. How to translate a string containing a binary code (1 and 0) into a number (integer)? Write a program for this.
 
