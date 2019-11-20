@@ -5,10 +5,10 @@ class RestApiTester():
         self.url_home = 'https://jsonplaceholder.typicode.com'
 
     def process_result( self, result):
-        print( "The Response code is :", result.status_code)
+        print( "The Response code is  :", result.status_code)
         result = result.json()
-        print( "Id is :", result['id']) if 'id' in result else None
-        print( "Text is:", result['body']) if 'body' in result else None
+        print( "Id is                 :", result['id']) if 'id' in result else None
+        print( "Response is           :", result)
         print( '%' * 80, '\n')
  
     ## Wrapper func handling put, patch and delete also.
