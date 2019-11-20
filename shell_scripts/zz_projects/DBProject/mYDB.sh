@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/usr/local/bin/bash
 #==============================================================================
 #		     BATCH 23 DATABASE MANAGEMENT
 #      File Name : MyDB
@@ -13,7 +13,7 @@
 
 # Change the Following Variable Appropriately....( If You have copied ;-) );
 # Used by All the Add, Remove, Display, Sort Modules? ( Be Aware !! )
-DIR=/home/bvaradar/Shell_Trials/DBProject
+DIR=/Users/bhasvara/git/learn_and_explore/shell_scripts/zz_projects/DBProject
 
 # Running First Time ? Create DATABASE File. 
 #[ ! -f $DIR/.DATABASE ] && touch $DIR/.DATABASE 
@@ -27,10 +27,10 @@ Choice=1   				   # Initially TRUE
 while [ $Choice -le 5 -a $Choice -gt 0 ]   # Validate Choice
 do
         clear
-        echo -e '\E[40;041m'"`tput cup 1 48` baracle-11gR2 `date` " ;
-        echo -e '\E[40;033m'"`tput cup 23 68`Bhaskar[B.E]" ;
+        echo -e '\E[40;036m'"`tput cup 1 48` bhasvara-2019 `date` " ;
+        echo -e '\E[40;033m'"`tput cup 21 68`Bhaskar[B.E]" ;
         #echo -e '\E[40;033m'"`tput cup 24 70`  B23TR3 `tput sgr0` " ;
-        echo -e '\E[40;033m'"`tput cup 24 70`  Quality Guy `tput sgr0` " ;
+        echo -e '\E[40;033m'"`tput cup 22 68`Quality Guy `tput sgr0` " ;
         echo -e '\E[43;037m'"`tput cup $xpos $ypos`******** BATCH-23 ********"; 
         xpos=`expr $xpos + 1`
 
@@ -86,7 +86,7 @@ do
        xpos=3              # Reinitialize X Position
        ypos=23             # Reinitialize Y Position
 done
-      echo -e '\E[43;036m' "\n\n\n\n\n\n\n\t\t\t***  THANK YOU  ***\n\n"  
+      echo -e '\E[43;035m' "\n\n\n\n\n\n\n\t\t\t***  THANK YOU  ***\n\n"  
       tput sgr0 
       
 unset NSTATUS
