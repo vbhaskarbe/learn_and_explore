@@ -1,0 +1,25 @@
+#! /bin/sed -f
+
+1{
+	c\
+Enter Yes/No?
+}
+
+/[Yy]es/ {
+	c\
+	You Typed Yes !
+	p
+	bb
+}
+
+/[Nn]o/ {
+	c\
+	You Typed No !
+	p
+	bb
+}
+
+
+/.*/q
+:b
+q

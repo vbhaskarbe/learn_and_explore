@@ -1,0 +1,23 @@
+#!/bin/sh 
+
+REPLACE_STRING="import ";
+
+# Loop for all given files
+for filename in $*
+do
+echo "Checking out file $filename"
+# Checkout the given file
+ade co -nc $filename
+
+echo "Modifing the file $filename"
+# Insert the String
+sed -i '/import /{
+i \
+'"$REPLACE_STRING"'
+:j
+N;
+s/\(.*\)/\1/;
+bj
+}' $filename
+done
+echo "Info: Done"

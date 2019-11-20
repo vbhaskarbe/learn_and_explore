@@ -1,0 +1,10 @@
+#! /bin/sed -f
+# MultiBlanks2One.sh
+# A Sed Program that reduces multiple blank lines to one
+# Usage : <this script name> <i/p file>"
+# Bhaskar.V, Lokesh, Krithi
+
+/^$/ {
+	N
+	/^\n$/D
+} 

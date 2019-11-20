@@ -1,0 +1,14 @@
+#! /bin/sed -nf
+#  There is a BUG in this:- Hope to FIX it Soon
+#  Bhaskar.V
+ 1~2 {
+	h;
+	$!d;
+     }
+ 
+ 2~2,$ {
+	G;
+	p;
+	$!d;
+	h;
+      }

@@ -1,0 +1,17 @@
+#! /bin/sh
+
+[ -z "$1" ] && echo "Usage : $0 command" && exit;
+command=$1
+[ -n "$command" ] || exit 1
+
+set `echo $PATH | sed 's/^:/.:/
+			s/::/:.:/g
+			s/:$/:./
+			s/:/ /g'`
+	
+while [ $# -ne 0 ] ; do
+	[ -f $1/$command ] && echo "$1/$command" && exit 0
+	shift
+done
+echo "$0 : No $command in ($PATH)"
+exit 1

@@ -1,0 +1,18 @@
+#! /bin/sed -nf
+# A Sed Script to Join the whole file into A Single line.
+# Bhaskar.V
+
+# Just Append Every line to Hold Space, Including Last line
+H;
+
+# If Last line
+${
+	# Exchange Hold Space with Pattern Space
+	x
+
+	# Delete All New-Lines...Gheee Making A Single line
+	s/\n//g
+	
+	# Print it;
+	p
+ }

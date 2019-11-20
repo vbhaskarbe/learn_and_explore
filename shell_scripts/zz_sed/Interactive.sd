@@ -1,0 +1,32 @@
+#! /bin/sed -nf
+# At Command line Type this File name followed by <CR> ( Press Enter )
+# An Interactive (??)  SED Script to Reverse a Given Line.
+# Bhaskar.V
+1 {
+	c\
+Enter Any Text:
+}
+
+2 {
+	/^[ ]*$/{
+		c\
+		No INPUT to Work!
+		bb
+		}
+
+	:z
+	s/\(.*\)/-!-\1-!-/
+		    :a
+		    s/-!-\(.\)\(.*\)\(.\)-!-/\3-!-\2-!-\1/
+		    ta
+		    s/-!-//g; 
+		i\
+The Text Reversed is :
+	 	    :b
+		    p;
+	 	    q;
+  }
+
+/^[ ]*$/q
+
+bz

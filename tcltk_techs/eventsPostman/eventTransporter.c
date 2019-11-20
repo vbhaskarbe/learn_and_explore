@@ -1,46 +1,4 @@
 /*******************************************************************************
-* <COPYRIGHT_START>
-*
-*                               NOTICE
-*
-*                    COPYRIGHT 1998...2002 GADZOOX NETWORKS
-*                          ALL RIGHTS RESERVED
-*
-*  This computer program is copyrighted and contains confidential and
-*  proprietary information and is a TRADE SECRET of GADZOOX NETWORKS.
-*  The receipt or possession of this program does not convey
-*  rights to reproduce or disclose its contents, or to manufacture, use,
-*  or sell anything that it may describe, in whole or in part, outside of a
-*  specific written licensing agreement with GADZOOX NETWORKS.
-*  Any reproduction of this program outside the specifications of a
-*  licensing agreement with GADZOOX NETWORKS is a violation of the copyright
-*  laws and may subject you to criminal prosecution.
-*
-*  Although efforts have been made to assure that this source code is correct,
-*  reliable, and technically accurate, the source code is licensed to Licensee
-*  as is and without warranties as to performance of merchantability, fitness
-*  for a particular purpose or use, or any other warranties whether expressed
-*  or implied. Licensee's organization and all users of the source code assume
-*  all risks when using it.  Gadzoox Networks shall not be liable for any
-*  consequential, incidental, punitive or special damages arising out of the
-*  use of or inability to use the source code.
-*
-*
-*  Identification: $Id: EventTransporter.c,v 1.0 2003/08/14 11:03:10 cvsadmin Exp $
-*
-*  Modules:
-*
-*  Description:
-*
-*  History:
-*
-*  $Log: EventTransporter.c,v $
-*  Revision 1.0  2003/08/14 11:03:10  cvsadmin
-*  After following proper indentation ( removing hard tabs ) and
-*  adding the history ( with copyright of Gadzoox ) in each file.
-*
-*
-* </COPYRIGHT_END>
 ******************************************************************************/
 
 #include <sys/types.h>
@@ -58,6 +16,7 @@
 #define NUM_OF_EVENTS 12
 #define MIN_ARGS      5
 #define SwMaxNumDomains 256
+
 /* BaseManagerPortId, the base value of the linux port id 
  * that is opened to establish a connection with 
  * the Event-Receiver. This macro-value should not 

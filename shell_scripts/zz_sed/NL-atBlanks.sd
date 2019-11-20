@@ -1,0 +1,8 @@
+#! /bin/sh
+# FILENAME : NLatBlanks.sd
+# A Script to Replace all blank lines in a file with NLs
+# Bhaskar.V, Lokesh, Krithi
+
+[ -z "$1" ] && echo "USAGE : `basename $0` i/pfile " && exit
+[ ! -f "$1" ] && echo "File \"$1\" Does not Exists" && exit
+sed 's/^[ ]*$/NL/' $1

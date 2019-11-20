@@ -1,0 +1,10 @@
+#! /bin/sed -nf
+
+#  Executed Only for the First line.
+1{h;b;}		
+
+# Executed for All lines.
+G;h
+
+# Executed for Last line only.
+${g;p;}

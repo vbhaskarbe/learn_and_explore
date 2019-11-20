@@ -1,0 +1,83 @@
+#! /bin/sed -nf
+# Bhaskar.V
+
+# Works for Positive numbers of Any length. 	 wow!!
+
+# Prompt and Read First Number	
+1{	c\
+Enter First Number :
+}
+
+2{	
+	# Put First Number in Hold Space
+	h; 
+	# Read Next Number
+	c\
+Enter Second Number :
+}
+
+	:j
+	# If The Second Number is 0* Then Time to Print Hold Space.
+	# Exchange it, So that its available in Pattern Space
+	# Branch to 'q', End.
+	/^[0]*$/{
+		x
+		bq
+	}
+
+# Looks like Second Number is Not 0* , Lets Reduce it by one
+
+# Code For Decrementing Second Number By One
+	td
+	:d
+	s/0\(_*\)$/_\1/		
+	td
+	
+	s/1\(_*\)$/0\1/
+	s/2\(_*\)$/1\1/
+	s/3\(_*\)$/2\1/
+	s/4\(_*\)$/3\1/
+	s/5\(_*\)$/4\1/
+	s/6\(_*\)$/5\1/
+	s/7\(_*\)$/6\1/
+	s/8\(_*\)$/7\1/
+	s/9\(_*\)$/8\1/
+
+	s/_/9/g
+
+# Time to Increment Second Number by One
+# Exchange the Pattern Space With Hold Space
+	x;
+
+# Code For Incrementing the First Number
+	ti
+	:i
+	s/9\(_*\)$/_\1/
+	ti
+
+	s/^\(_*\)$/0\1/
+
+	s/8\(_*\)$/9\1/
+	s/7\(_*\)$/8\1/
+	s/6\(_*\)$/7\1/
+	s/5\(_*\)$/6\1/
+	s/4\(_*\)$/5\1/
+	s/3\(_*\)$/4\1/
+	s/2\(_*\)$/3\1/
+	s/1\(_*\)$/2\1/
+	s/0\(_*\)$/1\1/
+
+	s/_/0/g
+
+# Back to Second Number for Decrementing Again....
+# Exchange p with h And Then Branch
+	x;
+	bj;
+
+
+# At the End Print the Pattern Space and Quit
+	:q
+	i\
+  The Sum of Both is :
+	p
+	q

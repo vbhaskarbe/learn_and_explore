@@ -1,15 +1,15 @@
 #############################################################################
 ##
-##    		  Global Edge SoftWare Limited.
+##    		  Bhaskar's SoftWare Limited.
 ## 
-##  SCRIPTNAME   : FspfEventSimulater.tck
+##  SCRIPTNAME   : RouteAgentEventSimulater.tck
 ##  DEVELOPER    : V. Bhaskar
 ##  DATE         : 20-07-2003
 ##  REVISION     : 1.1.b
 ##  PLATFORM     : Red Hat Linux 8.0 
 ##  LANGUAGE     : tck & tk
 ##  PURPOSE      :  A Script to implement a Centralized Event Manager
-##                 all fspfAgents running
+##                 all routeAgents running
 ##
 ##  CHANGE LOG   :
 ##

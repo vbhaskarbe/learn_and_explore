@@ -1,0 +1,28 @@
+record
+   string(15) post_cd_mask_tx; /* CHAR(15) NOT NULL*/
+   decimal(6) post_cd_lgth_ct; /* SMALLINT NOT NULL*/
+   string(2) post_cd_vld_cd; /* CHAR(2) NOT NULL*/
+   string(15) bank_cd_mask_tx; /* CHAR(15) NOT NULL*/
+   decimal(6) bank_cd_lgth_ct; /* SMALLINT NOT NULL*/
+   string(2) bank_cd_vld_cd; /* CHAR(2) NOT NULL*/
+   decimal(6) bank_max_lgth_ct; /* SMALLINT NOT NULL*/
+   string(2) iso_2_pos_cd; /* CHAR(2) NOT NULL*/
+   string(1) post_mand_ind; /* CHAR(1) NOT NULL*/
+   decimal(6) brnch_max_lgth_ct; /* SMALLINT NOT NULL*
+end;
+
+
+record
+   string(15) post_cd_mask_tx; /* CHAR(15) NOT NULL*/
+   decimal(6) post_cd_lgth_ct; /* SMALLINT NOT NULL*/
+   string(2) post_cd_vld_cd; /* CHAR(2) NOT NULL*/
+   string(15) bank_cd_mask_tx; /* CHAR(15) NOT NULL*/
+   decimal(6) bank_cd_lgth_ct; /* SMALLINT NOT NULL*/
+   string(2) bank_cd_vld_cd; /* CHAR(2) NOT NULL*/
+   decimal(6) bank_max_lgth_ct; /* SMALLINT NOT NULL*/
+   string(2) iso_2_pos_cd; /* CHAR(2) NOT NULL*/
+   string(1) post_mand_ind; /* CHAR(1) NOT NULL*/
+   decimal(6) brnch_max_lgth_ct; /* SMALLINT NOT NULL*
+end;
+
+
