@@ -9,6 +9,16 @@ class PySelenium_UI_Practice():
         self.b_driver  = None
         self.demo_site = demo_site
 
+    def find_elements( self, attr_type, attr_value):
+        self.element = None
+        try:
+            find_function = getattr( self.b_driver, 'find_elements_by_' + attr_type)
+            self.elements = find_function(attr_value)
+        except Exception as e:
+            print("Error: ", e)
+            exit(1)
+        return self.elements
+
     def find_element( self, attr_type, attr_value):
         self.element = None
         try:
@@ -67,7 +77,23 @@ class PySelenium_UI_Practice():
         print("Message after click() on check box is: ", element.text)
 
     def multiple_checkbox_demo(self):
-        pass
+        #//div[@class='checkbox']//a[@class='click']
+        ch_elements = self.b_driver.find_element_by_xpath("//div[contains(text(),'Multiple Checkbox Demo')]").find_elements_by_xpath("//div[@class='checkbox']")
+        #ch_elements = div2.find_elements_by_xpath("//div[@class='checkbox']")
+        for element in ch_elements:
+            print( element.text)
+            #print(element.is_selected())
+            cl_element = element.find_element_by_xpath("//input[@class='cb1-element']")
+            print( element)
+            #print( cl_element)
+            element.send_keys( Keys.ENTER)
+            #print(element.is_selected())
+            print("%%%%%%%%%%%%%")
+        #print( ch_elements)
+        #print( len(ch_elements))
+        #element = self.find_element('xpath', "//label[text()='Option 1']")
+        #print( element.is_selected())
+        #print( element.text)
 
     def close_browser( self):
         print("close_browser: *** All done! Time to close the browser ***")
@@ -76,13 +102,15 @@ class PySelenium_UI_Practice():
 if __name__ == '__main__':
     selui_object = PySelenium_UI_Practice()
     selui_object.start_browser()
+
     selui_object.go_to_required_form()
-    selui_object.single_input_field_test()
-    selui_object.two_input_fields_test()
+    #selui_object.single_input_field_test()
+    #selui_object.two_input_fields_test()
     
+    #selui_object.go_to_required_form('Check Box Demo')
+    #selui_object.single_checkbox_demo()
+
     selui_object.go_to_required_form('Check Box Demo')
-    selui_object.single_checkbox_demo()
-    selui_object.multiple_checkbox_demo()
-    
+    selui_object.multiple_checkbox_demo() 
     selui_object.close_browser()
 
