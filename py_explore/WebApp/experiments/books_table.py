@@ -38,9 +38,6 @@ def SQL_create_books_table( db, cursor):
     ## Showing the data
     for record in records:
         print(record)
-    
-    
-
 
 if __name__ == '__main__':
     import mysql.connector as mysql
@@ -57,6 +54,5 @@ if __name__ == '__main__':
 
     print("INFO: Create the Products type table")
     SQL_create_books_table(mydb, cursor)
-
 
 
