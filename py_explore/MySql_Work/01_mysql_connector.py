@@ -4,7 +4,7 @@ mydb = mysql.connect(
   host="localhost",
   user="root",
   passwd="welcome123",
-  database="lbc_db"
+#  database="lbc_db"
 )
 
 
