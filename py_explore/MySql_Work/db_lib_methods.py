@@ -19,9 +19,13 @@ def create_database(conn, cursor, db_name):
 
 ## Display records with fetch all
 def display_records( cursor):
-    records = cursor.fetchall()
-    for record in records:
-        print( record)
+    try: 
+        records = cursor.fetchall()
+    except mysql.Error as err_msg:
+        print("WARNING: {}".format(err_msg))
+    else:
+        for record in records:
+            print( record)
 
 ## Execute given sql command, optionally commit, optionally display records.
 def SQL_execute_one_statement( db, cursor, sql_cmd, commit = False, show_data = True):
