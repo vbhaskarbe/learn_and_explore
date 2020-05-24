@@ -5,7 +5,7 @@ def SQL_create_books_table( db, cursor, tab_name = 'book'):
     cursor.execute("DROP TABLE IF EXISTS orders")
     cursor.execute("DROP TABLE IF EXISTS books")
     cursor.execute("CREATE TABLE {tab_name} ( \
-                                    id          MEDIUMINT(11) NOT NULL AUTO_INCREMENT, \
+                                    id          MEDIUMINT(11) NOT NULL UNIQUE AUTO_INCREMENT, \
                                     title       VARCHAR(255), \
                                     description VARCHAR(255), \
                                     author      VARCHAR(255) NOT NULL, \
@@ -49,23 +49,29 @@ def SQL_create_orders_table( db, cursor):
                             quantity    INT(5) NOT NULL, \
                             amount      FLOAT(11,2) NOT NULL, \
                             book_id     MEDIUMINT(11) NOT NULL, \
+                            ordered_on  DATETIME NOT NULL, \
                             PRIMARY KEY (id), \
                             FOREIGN KEY (book_id) REFERENCES books(id))")
     print("***** INFO: The schema of the table 'orders'")
     cursor.execute("DESC orders;")
     print(cursor.fetchall())
-    sql_cmd = "INSERT INTO orders (buyer_name, quantity, amount, book_id) VALUES(%s, %s, %s, %s)"
+    sql_cmd = "INSERT INTO orders (buyer_name, quantity, amount, book_id, ordered_on) VALUES(%s, %s, %s, %s, %s)"
     values  = [
-                ("Bhaskar", "1", "480.0", "106"),
-                ("Bhaskar", "20", "4900", "101"),
-                ("Vishwa","2","180", "104"),
-                ("Lehit","1", "90", "107"),
+                ("Bhaskar", "1", "480.0", "106", '2019-11-24 08:15:10'),
+                ("Bhaskar", "20", "4900", "101", '2019-11-25 08:30:29'),
+                ("Vishwa","2","180", "104", '2019-11-28 11:15:00'),
+                ("Lehit","1", "124.0", "100", '2019-12-01 09:10:06'),
+                ("Bhaskar", "2", "180", "107", '2019-12-02 06:30:19'),
+                ("Vishwa", "1", "90", "104", '2019-12-02 10:45:54'),
+                ("Bhaskar", "1", "480.0", "106", '2019-12-03 10:58:13'),
               ]
     cursor.executemany( sql_cmd, values)
     db.commit()
     print(cursor.rowcount, "records inserted")
     print("***** INFO: All entries from table 'orders'")
     SQL_execute_one_statement( db, cursor, "SELECT * FROM orders")
+    print("***** INFO: Drop the table 'orders'")
+    SQL_execute_one_statement( db, cursor, "DROP TABLE IF EXISTS orderss;", True, True)
 
 def SQL_learn_commands(db, cursor):
     print("***** INFO: Display only 3 entries from table 'books'")
@@ -86,8 +92,8 @@ def SQL_learn_commands(db, cursor):
     print("***** INFO: Update price for entry with 'id' = 3")
     SQL_execute_one_statement( db, cursor, "UPDATE books SET price = '1280' WHERE id = 3", True, False)
     SQL_execute_one_statement( db, cursor, "SELECT * FROM books")
-    print("***** INFO: Drop the table 'books'")
-    SQL_execute_one_statement( db, cursor, "DROP TABLE IF EXISTS books;", True, True)
+    #print("***** INFO: Drop the table 'books'")
+    #SQL_execute_one_statement( db, cursor, "DROP TABLE IF EXISTS books;", True, True)
 
 if __name__ == '__main__':
     import mysql.connector as mysql
@@ -104,7 +110,8 @@ if __name__ == '__main__':
 
     print("***** INFO: Create the 'books' table")
     SQL_create_books_table( mydb, cursor, 'books')
-    #SQL_learn_commands(mydb, cursor)
+    SQL_learn_commands(mydb, cursor)
+    print("***** INFO: --------------- orders -------------------")
     SQL_create_orders_table( mydb, cursor)
     #print( dir( mydb))
 
