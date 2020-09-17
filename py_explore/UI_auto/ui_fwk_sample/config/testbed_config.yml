@@ -1,0 +1,13 @@
+## This configuration file having test environment details and config data
+
+WORK_SPACE: '/tmp/fwk_workspace'
+
+ENABLE_SCREENSHOTS: 'True'
+
+DEFAULT_BROWSER: 'Firefox'
+
+SITE_URL: 'https://www.seleniumeasy.com/test/'
+ 
+LOG_LEVEL: 'DEBUG'
+
+
