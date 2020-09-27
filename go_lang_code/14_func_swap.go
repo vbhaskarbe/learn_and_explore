@@ -9,6 +9,7 @@ func main() {
 	fmt.Printf("Before swapping: %s %s\n", name1, name2)
 	name1, name2 = swap_vars( name1, name2)
 	fmt.Printf(" After swapping: %s %s\n", name1, name2)
+	fmt.Printf("Length of name1: %d\n", len( name1))
 }
 
 func swap_vars( text1, text2 string) (string, string) {
