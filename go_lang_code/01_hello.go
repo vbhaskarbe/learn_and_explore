@@ -18,5 +18,9 @@ func main() {
 	fmt.Println("Random number between 1 - 10 is: ", rand.Intn(10))
 	fmt.Println("Random number between 1 - 10 is: ", rand.Intn(10))
 
+	var name string
+	fmt.Printf("Enter your name: ")
+	fmt.Scanf("%s", &name)
+	fmt.Println("Hello,", name)
 }
 
