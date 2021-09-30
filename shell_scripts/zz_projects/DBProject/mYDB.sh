@@ -29,27 +29,26 @@ do
         clear
         echo -e '\E[40;036m'"`tput cup 1 48` bhasvara-2019 `date` " ;
         echo -e '\E[40;033m'"`tput cup 21 68`Bhaskar[B.E]" ;
-        #echo -e '\E[40;033m'"`tput cup 24 70`  B23TR3 `tput sgr0` " ;
         echo -e '\E[40;033m'"`tput cup 22 68`Quality Guy `tput sgr0` " ;
         echo -e '\E[43;037m'"`tput cup $xpos $ypos`******** BATCH-23 ********"; 
         xpos=`expr $xpos + 1`
 
-	echo -e '\E[45;032m'"`tput cup $xpos $ypos`*                        *"
+		echo -e '\E[45;032m'"`tput cup $xpos $ypos`*                        *"
         xpos=`expr $xpos + 1`
 
         echo -e '\E[41;036m'"`tput cup $xpos $ypos`*      1.Add             *"
         xpos=`expr $xpos + 1`
 
-	echo -e '\E[43;037m'"`tput cup $xpos $ypos`*      2.Remove          *" ;
+		echo -e '\E[43;037m'"`tput cup $xpos $ypos`*      2.Remove          *" ;
         xpos=`expr $xpos + 1`
         
-	echo -e '\E[46;031m'"`tput cup $xpos $ypos`*      3.Change          *"
+		echo -e '\E[46;031m'"`tput cup $xpos $ypos`*      3.Change          *"
         xpos=`expr $xpos + 1`
 
-	echo -e '\E[42;034m'"`tput cup $xpos $ypos`*      4.Sort            *"
+		echo -e '\E[42;034m'"`tput cup $xpos $ypos`*      4.Sort            *"
         xpos=`expr $xpos + 1`
 
-	echo -e '\E[44;032m'"`tput cup $xpos $ypos`*      5.Display         *"
+		echo -e '\E[44;032m'"`tput cup $xpos $ypos`*      5.Display         *"
         xpos=`expr $xpos + 1`
 
         echo -e '\E[45;036m'"`tput cup $xpos $ypos`*      6.Exit            *"  
@@ -64,24 +63,24 @@ do
         tput cup $xpos $ypos
         read Choice                         #  Getting the Option
          
-            case $Choice in
+        case $Choice in
 	 	   1) export NSTATUS=0;
-                      . /$DIR/.Add;         # Switch to Add
+              . /$DIR/.Add;         # Switch to Add
 		      ;;
-	     	   2) . /$DIR/.Remove;      # Switch to Remove
+	       2) . /$DIR/.Remove;      # Switch to Remove
 		      ;;
 		   3) export NSTATUS=1;
-                      . /$DIR/.Add;
+              . /$DIR/.Add;
 		      ;;
-	           4) . /$DIR/.Sort;        # Switch to Sort
-                      . /$DIR/.Display; 
-	              ;;
-                   5) cat /$DIR/.DATABASE > DispFile ; 
-                      . /$DIR/.Display;
-                      ;;
-                   *) break; 
-                      ;;
-		esac
+	       4) . /$DIR/.Sort;        # Switch to Sort
+              . /$DIR/.Display; 
+	          ;;
+           5) cat /$DIR/.DATABASE > DispFile ; 
+              . /$DIR/.Display;
+              ;;
+           *) break; 
+              ;;
+	   esac
        tput reset 
        xpos=3              # Reinitialize X Position
        ypos=23             # Reinitialize Y Position
